@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💖 Un correo para ti by myeya 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+     min-height: 100vh;
+    padding: 20px 0;
+    overflow-y: auto;
+      margin: 0;
+      text-align: center;
+      color: #333;
+      transition: background-color 0.5s ease;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+   .screen {
+  display: none;
+  animation: fadeIn 0.8s ease;
+  width: 95%;
+  max-width: 900px;
+}
+
+.active {
+  display: block;
+}
+
+#screen1.active,
+#screen2.active,
+#screen3.active,
+#screen4.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+    .main-img {
+      width: 280px;
+      height: auto;
+      margin-bottom: 15px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      border: none;
+      box-shadow: none;
+    }
+    .main-img:hover {
+      transform: scale(1.05);
+    }
+
+    .card {
+      background: repeating-linear-gradient(
+        white,
+        white 28px,
+        #e3e3e3 29px
+      );
+      border-radius: 0; /* esquinas en punta */
+      padding: 40px 60px;
+      border: 2px solid #e5e5e5;
+      width: 95%;
+      max-width: 900px;
+      text-align: left;
+      margin: 0 auto;
+      box-sizing: border-box;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease;
+    }
+    .card h3 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2em;
+      text-align: left;
+      margin-bottom: 20px;
+      margin-left: 10px;
+      color: #444;
+    }
+    .card p {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.3em;
+      line-height: 1.6;
+      text-align: justify;
+      color: #444;
+      margin: 10px 0;
+    }
+
+    .return-btn {
+      margin-top: 25px;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+      background-color: #ff4f81;
+      color: white;
+    }
+    .return-btn:hover {
+      background-color: #ff2a66;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.95);}
+      to {opacity: 1; transform: scale(1);}
+    }
+  </style>
+</head>
+<body>
+  <audio id="musica" loop>
+  <source src="cosa.mp4" type="audio/mp4">
+    </audio>
+    <div class="screen active" id="screen1">
+    <h2>Hola, te llegó un correo</h2>
+    <img src="mens.png" alt="Correo" class="main-img" onclick="nextScreen(2)">
+  </div>
+
+  <div class="screen" id="screen2">
+    <h2>Una cartita para ti</h2>
+    <img src="conejo.png" alt="Carta" class="main-img" onclick="nextScreen(3)">
+  </div>
+
+  <div class="screen" id="screen3">
+    <h2>¡Ábrelo!</h2>
+    <img src="cart.png" alt="Sobre" class="main-img" onclick="nextScreen(4)">
+  </div>
+
+<div class="screen" id="screen4">
+  <h2>¿Qué dirá?</h2>
+  <img src="romeoyJ.jpg" alt="Carta lista" class="main-img" onclick="nextScreen(5)">
+</div>
+
+
+ <div class="screen" id="screen5">
+  <div class="card">
+    <h3>Querida Samy,</h3>
+    <p>
+      Llevo meses enamorado de ti y hoy por fin me siento libre de decirte esto. 
+      No es que haya dejado de amarte o que la intensidad de ese amor se haya apagado; no es tan
+       sencillo como eso. Más bien aprendí a aceptar lo que siento sin esconderlo y sin esperar nada a cambio.
+    </p>
+    <p>
+     Durante mucho tiempo guardé estas palabras para mí, pero entendí que hay sentimientos que 
+     merecen ser dichos. Porque te amo. Te amo por la tranquilidad que me transmites, por
+     la forma en que existes en mis pensamientos incluso cuando
+     no estás presente y por todos esos pequeños momentos que, sin darte cuenta, hiciste importantes para mí.
+    </p>
+    <div style="display:flex; justify-content:space-between; margin-top:20px;">
+  <img src="tarde2.jpeg"
+       alt="Atardecer"
+       style="
+       width:80%;
+       max-width:350px;
+       border-radius:12px;
+       box-shadow:0 4px 12px rgba(0,0,0,0.2);
+       ">
+       <img src="tarde.jpeg"
+       alt="Atardecer"
+       style="
+       width:60%;
+       max-width:300px;
+       border-radius:12px;
+       box-shadow:0 4px 12px rgba(0,0,0,0.2);
+       ">
+     </div>
+    <p>
+      Ayer en la carretera, me acorde de ti, si hubieras estado aqui habríamos sonreido juntos a menudo. 
+      Me daba cuenta de lo mucho que ocupabas en mi vida cotidiana, 
+      mezclada con el mínimo detalle, metida literalmente en mi
+    </p>
+  </div>
+
+  <div style="text-align:center;">
+    <button class="return-btn" onclick="nextScreen(6)">➡ Siguiente hoja</button>
+  </div>
+</div>
+
+<div class="screen" id="screen6">
+  <div class="card">
+    <h3> 😻 Aqui te espero...</h3>
+
+    <p>
+     Todos hacemos lo mismo cuando nos gusta algo. 
+     Te escribía más que nada para decirte: aquí estoy. Estoy en cada recuerdo que guardo de ti, en cada 
+     sonrisa que me regalaste sin saberlo, en cada momento en el que pensé que conocerte había sido una
+      de las cosas más bonitas que me habían pasado. <br>
+     Estoy aquí. Con el mismo cariño con el que aprendí a quererte y con la misma sinceridad con 
+     la que hoy me atrevo a decirte que te amo.
+    </p>
+ <div style="text-align:center; margin:25px 0;">
+  <video id="video1" controls width="400">
+    <source src="sam.mp4" type="video/mp4">
+  </video>
+</div>
+    <p>
+     Espérame como yo te espero a ti. No te retires a menos que no puedas hacer otra cosa.
+      Vive, sé brillante y curiosa, busca lo que es hermoso, lee lo que te guste, y cuando
+       llegue la ruptura, vuelve a mí, quien siempre estará volcado hacia ti. 
+       Ahora sé mucho más sobre ti y sobre mí mismo de lo que jamás supe. Por eso sé que perderte es
+      morir de cierta manera."
+    </p>
+  </div>
+
+  <div style="display:flex; justify-content:space-between; margin-top:20px;">
+    <button class="return-btn" onclick="nextScreen(5)">⬅ Hoja anterior</button>
+    <button class="return-btn" onclick="nextScreen(7)">➡ Siguiente hoja</button>
+  </div>
+</div>
+
+<div class="screen" id="screen7">
+  <div class="card">
+    <h3> 💖 Mi princesa bella</h3>
+
+    <p>
+     Pero pase lo que pase, no olvides que siempre habrá un ser en el mundo al que, 
+     en cualquier momento, puedes recurrir o venir. Todas las veces que estoy contigo te doy, desde 
+     el fondo de mi corazón, todo lo que poseo y todo lo que soy. 
+     Lo mantendrás hasta que deje este extraño mundo que está empezando a cansarme. 
+     Mi esperanza es que algún día veas lo mucho que te amé
+    </p>
+      
+ <div style="text-align:center; margin:25px 0;">
+  <video id="video2" controls width="400">
+    <source src="uio.mp4" type="video/mp4">
+  </video>
+</div>
+
+
+    <p>
+        En otras palabras, te amo mi amor. Pienso en ti día y noche, me pregunto dónde estarás,
+        qué estará haciendo, con quién está? Me pregunto si aún me extraña, 
+        si piensa en mi por lo menos en algún momento.
+        Sé que esto no es lo que usted mereciera en una relación, pero es todo lo que puedo darle,
+        ademas, sè que esta ocupada con su trabajo.
+        Lo unico que desearia es tenerla màs para mi. Aquí estoy, 
+        siempre para usted, aunque usted no siempre esté para mi 🥀 
+    </p>
+    <h3>La amo mucho <br> Bryan</h3>
+  </div>
+
+  <div style="display:flex; justify-content:space-between; margin-top:20px;">
+    <button class="return-btn" onclick="nextScreen(6)">⬅ Hoja anterior</button>
+    <button class="return-btn" onclick="nextScreen(5)">🔙 Regresar</button>
+  </div>
+</div>
+  <script>
+let musicaIniciada = false;
+
+function nextScreen(num) {
+  if (!musicaIniciada) {
+    document.getElementById("musica").play();
+    musicaIniciada = true;
+  }
+
+  const current = document.querySelector(".screen.active");
+  if (current) current.classList.remove("active");
+  document.getElementById("screen" + num).classList.add("active");
+}
+
+const musica = document.getElementById("musica");
+
+const video1 = document.getElementById("video1");
+const video2 = document.getElementById("video2");
+
+// VIDEO 1
+video1.addEventListener("play", () => {
+  musica.pause();
+});
+
+video1.addEventListener("pause", () => {
+  if (!video1.ended) {
+    musica.play();
+  }
+});
+
+video1.addEventListener("ended", () => {
+  musica.play();
+});
+
+// VIDEO 2
+video2.addEventListener("play", () => {
+  musica.pause();
+});
+
+video2.addEventListener("pause", () => {
+  if (!video2.ended) {
+    musica.play();
+  }
+});
+
+video2.addEventListener("ended", () => {
+  musica.play();
+});
+
+</script>
+</body>
+</html>
